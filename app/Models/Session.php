@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,15 +12,15 @@ class Session extends Model
 
     ###################################################### START RELATIONS ############################################################
     public function module(){
-        return $this->belongsTo('App\Module','module_id','id');
+        return $this->belongsTo('App\Models\Module','module_id','id');
     }
 
     public function teacher(){
-        return $this->belongsTo('App\Teatcher','teatcher_id','id');
+        return $this->belongsTo('App\Models\Teatcher','teatcher_id','id');
     }
 
     public function sessions(){
-        return $this->belongsToMany('App\Student','student-sessions','session_id','student_id','id','id');
+        return $this->belongsToMany('App\Models\Student','student-sessions','session_id','student_id','id','id');
     }
     ###################################################### END RELATIONS ############################################################
 }

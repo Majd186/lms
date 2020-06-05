@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,19 +12,19 @@ class Module extends Model
 
     ###################################################### START RELATIONS ############################################################
     public function course(){
-        return $this->belongsTo('App\Course','course_id','id');
+        return $this->belongsTo('App\Models\Course','course_id','id');
     }
 
     public function assignments(){
-        return $this->hasMany('App\Assignment','module_id','id');
+        return $this->hasMany('App\Models\Assignment','module_id','id');
     }
 
     public function tests(){
-        return $this->hasMany('App\Test','module_id','id');
+        return $this->hasMany('App\Models\Test','module_id','id');
     }
 
     public function sessions(){
-        return $this->hasMany('App\Session','module_id','id');
+        return $this->hasMany('App\Models\Session','module_id','id');
     }
     ###################################################### END RELATIONS ############################################################
 }
